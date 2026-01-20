@@ -1,7 +1,9 @@
-# name = input("Enter your name")
-# print(name)
+name = input("What is your name ?")
+age = int(input("what is your age ?"))
+height = float(input("what is your height ?"))
+age = age +1
 
-num = input()  # Take input in string format
-one = int(input()) # Take input and convert to integer
-num = int(num)  # Convert string input to integer
-print(num)
+print("Hello " + name)
+print("you are " + str(age) + " years old")
+print("you are " + str(height) + "cm tall")
+ 
