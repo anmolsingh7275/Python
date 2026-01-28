@@ -4,5 +4,5 @@ def hello(name,age):
 hello("Anmol Singh" ,21)  
 def add(x,y):
     return x +y  
-
+       
 print(add(5,10))
