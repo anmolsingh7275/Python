@@ -8,6 +8,7 @@ food = ["pizza", "burger", "hotdog", "Spaghetti", "pasta"]
 # food.pop()
 # food.insert(0,"cake")
 # food.sort()
-food.clear()
+# food.clear()
 for x in food:
      print(x)
+print("food is good ")     
