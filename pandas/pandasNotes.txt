@@ -1,0 +1,113 @@
+🔵 LEVEL 1: Basics of Pandas
+1️⃣ What is Pandas?
+
+Pandas is a Python library used for:
+
+Data cleaning
+
+Data analysis
+
+Working with CSV/Excel
+
+Handling large datasets
+
+2️⃣ Installing Pandas
+pip install pandas
+
+Import:
+
+import pandas as pd
+3️⃣ Two Main Data Structures
+🔹 Series (1D)
+s = pd.Series([10, 20, 30, 40])
+print(s)
+🔹 DataFrame (2D Table)
+data = {
+    "Name": ["Anmol", "Rahul", "Priya"],
+    "Marks": [90, 85, 88]
+}
+
+df = pd.DataFrame(data)
+print(df)
+🔵 LEVEL 2: Reading & Writing Files
+📂 Read CSV
+df = pd.read_csv("data.csv")
+📂 Read Excel
+df = pd.read_excel("data.xlsx")
+💾 Save CSV
+df.to_csv("output.csv", index=False)
+🔵 LEVEL 3: Basic Data Exploration
+🔎 See first 5 rows
+df.head()
+🔎 Last 5 rows
+df.tail()
+📊 Shape
+df.shape
+📋 Column Names
+df.columns
+ℹ️ Info
+df.info()
+📈 Statistical Summary
+df.describe()
+🔵 LEVEL 4: Selecting & Filtering Data
+🎯 Select Column
+df["Name"]
+
+Multiple columns:
+
+df[["Name", "Marks"]]
+🎯 Select Row
+
+By index:
+
+df.loc[0]
+
+By position:
+
+df.iloc[0]
+🎯 Filter Data
+df[df["Marks"] > 85]
+
+Multiple condition:
+
+df[(df["Marks"] > 85) & (df["Name"] == "Anmol")]
+🔵 LEVEL 5: Data Cleaning (Very Important 🔥)
+❗ Check Missing Values
+df.isnull().sum()
+❌ Drop Missing
+df.dropna()
+df.dropna(subset=["Marks"])
+🔄 Fill Missing
+df.fillna(0)
+df["Marks"].fillna(df["Marks"].mean())
+🧹 Remove Duplicates
+df.drop_duplicates()
+🔤 Rename Column
+df.rename(columns={"Marks": "Score"}, inplace=True)
+🗑 Drop Column
+df.drop("Marks", axis=1)
+🔵 LEVEL 6: GroupBy (Very Powerful 🔥🔥🔥)
+Example Data
+data = {
+    "Name": ["A", "B", "A", "B"],
+    "Marks": [90, 80, 85, 70]
+}
+
+df = pd.DataFrame(data)
+Group By Name
+df.groupby("Name").mean()
+Multiple Aggregation
+df.groupby("Name").agg(["mean", "max", "min"])
+🔵 LEVEL 7: Advanced Pandas
+🔁 Apply Function
+df["Marks"].apply(lambda x: x + 5)
+📊 Sorting
+df.sort_values("Marks")
+df.sort_values("Marks", ascending=False)
+🔗 Merge DataFrames
+pd.merge(df1, df2, on="ID")
+📌 Pivot Table
+pd.pivot_table(df, values="Marks", index="Name", aggfunc="mean")
+📆 Working With Dates
+df["Date"] = pd.to_datetime(df["Date"])
+df["Year"] = df["Date"].dt.year
