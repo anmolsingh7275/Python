@@ -37,11 +37,31 @@ import time
 #     if name != "":
 #         break
 
-for i in range(10):
-    if i == 5:
-        continue
-    print(i)
+# for i in range(10):
+#     if i == 5:
+#         continue
+#     print(i)
     
-for i in range(0,20,2):
- print(i)
-         
+# for i in range(0,20,2):
+#  print(i)
+# name = ""         
+# while len(name) == 0:
+#     name = input("Enter your name: ")
+    
+# print("Hello " + name)   
+
+
+# for i in range(50,100):
+#     print(i)
+    
+#print matrcie of 3 by 2
+
+row = int(input("Enter a row: "))
+column = int(input("Enter a column: "))
+
+for i in range(row):
+    for j in range(column):
+        print("#", end="")
+    print("")     
+    
+    
