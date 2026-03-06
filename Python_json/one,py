@@ -1,0 +1,12 @@
+import json 
+employee = '''{
+  "employees": [
+    {"id": 1, "name": "John"},
+    {"id": 2, "name": "Emma"}
+  ]
+}'''
+
+data = json.loads(employee)
+# print(data)
+# print(type(data))
+print(type(data['employees']))
